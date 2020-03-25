@@ -25,7 +25,7 @@ SECRET_KEY = 'z+4*p^kv_zsh$29vsa=9=bd0-f%%^5!%0u-mpi+7%b57e2@n&f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
