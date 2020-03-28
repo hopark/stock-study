@@ -1,7 +1,7 @@
 from django.db import models
 
 class StockInfo(models.Model):
-	pair_ID = models.IntegerField()
+	pair_ID = models.IntegerField(primary_key=True)
 	stock_symbol = models.CharField(max_length=10)
 	parent_pair_ID = models.BooleanField()
 	canonical_to_pair_id = models.BooleanField()
