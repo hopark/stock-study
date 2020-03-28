@@ -59,14 +59,14 @@ with requests.Session() as s:
             for row in rows:
                 cell = row.select('td')
                 field = cell[0].text
-                data = "" if cell[1].text == "" else int(cell[1].text)
+                data = float(cell[1].text) if cell[1].text.replace('.', '').isdigit() else ""
                 stock[i][field] = data
             print(f'progress.. {num}/{args.total_stock}')
             num += 1    
         stock_list += stock
 stock_data = pd.DataFrame(stock_list)
-bal_col = {'총유동자산': 'current_assets', '총 자산': 'assets', '총유동부채': 'current_liabilities', '총부채': 'liabilities', '총자본': 'capital'}
-stock_data.rename(columns=bal_col, inplace=True)
+ren_col = {'총유동자산': 'current_assets', '총 자산': 'assets', '총유동부채': 'current_liabilities', '총부채': 'liabilities', '총자본': 'capital', '3year': 'year3', 'yield': 'yld'}
+stock_data.rename(columns=ren_col, inplace=True)
 
 columns = stock_data.columns.to_list()
 del_col = [l for l in columns for end in ['_us', '_eu', '_frmt'] if l.endswith(end)]

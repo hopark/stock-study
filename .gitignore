@@ -1,2 +1,5 @@
 #python compile
 __pycache__/
+
+# temp ignore
+stock_info.csv
