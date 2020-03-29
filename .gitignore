@@ -3,3 +3,6 @@ __pycache__/
 
 # temp ignore
 stock_info.csv
+
+#vscode file
+.vscode/settings.json
